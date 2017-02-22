@@ -1,0 +1,50 @@
+<h1>Update order id: <%= @pizza.id %></h1>
+
+<h3>Please update the details for this order:</h3>
+
+<div class="form-column-layout">
+
+<form method="POST" action="/pizzas/<%= @pizza.id %>">
+
+<div class="form-layout">
+  <label for="first-name">First Name:</label>
+  <input 
+  type="text" 
+  id="first-name" 
+  name="first_name" 
+  value="<%= @pizza.first_name%>"/> 
+  </div>
+
+  <div class="form-layout">
+  <label for="last-name">Last Name:</label>
+  <input 
+  type="text" 
+  id="last-name" 
+  name="last_name"
+  value="<%= @pizza.last_name%>"/> 
+  </div>
+
+  <div class="form-layout">
+  <label for="pizza-select">Select Pizza:</label>
+  <select id="pizza-select" name="topping"/> 
+  <option <% "selected" if (@pizza.topping == "Margherita") %>value="Margherita">Margherita</option>
+  <option <% "selected" if (@pizza.topping == "Calzone") %>
+    value="Calzone">Calzone</option>
+  </select>
+  </div>
+
+  <div class="form-layout">
+  <label for="quantity">Quantity</label>
+  <input min="1" step="1" type="number" id="quantity" name="quantity" value="<%= @pizza.quantity %>"/>
+  </div>
+
+
+  <div class="form-layout">
+  <input type="submit" value="Update Order <%= @pizza.id %> Now"/>
+  </div>
+
+</form>
+
+</div>
+
+

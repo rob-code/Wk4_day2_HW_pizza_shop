@@ -1,0 +1,35 @@
+<h1>You have <%= @pizzas.count %>   pizza orders</h1>
+<%  @pizzas.each do |pizza| %>
+
+<div class='index-row'>
+
+<p>Name: <%=pizza.pretty_name()   %> </p>
+<p>Order: <%=pizza.quantity %> x <%=pizza.topping %></p>
+
+<div class="three-button-layout">
+<div class="button-layout">
+<form method="GET" action="/pizzas/<%= pizza.id %>">
+<input class="button" type="submit" value="Show Order">
+</form>
+</div>
+
+<div class="button-layout">
+<form method="GET" action="/pizzas/<%= pizza.id %>/edit">
+<input class="button" type="submit" value="Edit Order">
+</form>
+</div>
+
+<div class="button-layout">
+<form method="POST" action="/pizzas/<%= pizza.id %>/delete">
+<input class="button" type="submit" value="Delete Order">
+</form>
+</div>
+
+
+</div>  <!-- 3 button layout -->
+<hr />
+
+</div>
+
+
+<% end %>

@@ -1,0 +1,36 @@
+<h3>Please enter the details of the new pizza order</h3>
+
+<div class="form-column-layout">
+
+  <form method="POST" action="/pizzas">
+
+    <div class="form-layout">
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first_name"/> 
+    </div>
+
+    <div class="form-layout">
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" name="last_name"/> 
+    </div>
+
+    <div class="form-layout">
+      <label for="pizza-select">Select Pizza:</label>
+      <select id="pizza-select" name="topping"/> 
+      <option value="Margherita">Margherita</option>
+      <option value="Calzone">Calzone</option>
+    </select>
+  </div>
+
+  <div class="form-layout">
+    <label for="quantity">Quantity</label>
+    <input min="1" step="1" type="number" id="quantity" name="quantity"/> 
+    </div>
+
+    <div class="form-layout">
+    <input type="submit" value="Order Pizza">
+  </div>
+
+</form>
+
+</div>
